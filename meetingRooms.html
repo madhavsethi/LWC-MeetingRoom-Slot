@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Meeting Rooms!">
+        <ul>
+            <template for:each={allRooms} for:item="room">
+                <li key={room.roomNumber} style="padding: 10px">
+                    <c-meeting-Room roominfo={room} show-room-info slot="RoomInfoSlot">
+                        <lightning-tile label={room.roomNumber} href="/path/to/somewhere">
+                            <p class="slds-truncate" title={room.roomCapacity}>Room Capacity: {room.roomCapacity}</p>
+                        </lightning-tile>
+                        <div>
+                            This is additional unnamed slot.
+                        </div>
+                    </c-meeting-Room>
+                </li>           
+            </template>
+        </ul>
+    </lightning-card>    
+</template>
